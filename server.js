@@ -53,7 +53,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 app.get('/glassware', (req, res) => {
     res.render('glassware.ejs', {
-        productsArray: productsArray
+        products: products
     });
 })
 //====================
