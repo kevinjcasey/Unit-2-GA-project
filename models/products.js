@@ -2,7 +2,7 @@ const products = [
     {
         name: 'Coupe Glass',
         price: 15,
-        image: '',
+        // image: '',
         description: 'Beautful hand-blown coupe glass',
         category: 'Glassware',
         purchased: false
