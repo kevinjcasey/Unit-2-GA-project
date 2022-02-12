@@ -1,3 +1,4 @@
+
 const products = [
 
 // ===== Glassware ====== //
@@ -8,10 +9,10 @@ const products = [
         image: '',
         description: 'Vestibulum auctor dapibus neque',
         category: 'Glassware',
-        purchased: false
+        purchased: false,
     },
     {
-        name: 'Martini/Cocktail',
+        name: 'Martini-Cocktail',
         price: 10,
         image: '',
         description: 'Vestibulum auctor dapibus neque',

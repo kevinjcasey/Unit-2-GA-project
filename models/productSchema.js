@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
     purchased: Boolean
 })
 
-const productCollection = mongoose.model('Products', productSchema);
+const productCollection = mongoose.model('Product', productSchema);
 
 module.exports = productCollection
 

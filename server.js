@@ -8,7 +8,7 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const productSchema = require('./models/productSchema');
-const products = require('./models/products');
+const Products = require('./models/products');
 
 //====================
 //Port
@@ -31,6 +31,26 @@ mongoose.connect(MONGODB_URI);
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
+
+//====================
+//Seeding data
+//====================
+
+
+    // productSchema.create (Products, (err, data) => {
+    // if (err) console.log( err.message )
+    // console.log("added provided products data");
+    // })
+
+
+// app.get('/products/seed', (req,res) => {
+//     productSchema.create(
+//       [
+//         Products
+//       ], (err, data) => {
+//       console.log("seeding worked");
+//     })
+//   })
 
 //====================
 //Middleware
@@ -67,17 +87,16 @@ app.get('/categories', (req, res) => {
 
 app.get('/glassware', (req, res) => {
     res.render('glassware.ejs', {
-        products: products
-    });
+        products: Products
+    }); 
 })
-
-// -------- Info / Show ------- //
+// -------- Product Info / Show ------- //
 
 app.get('/glassware/:id', (req, res) => {
-    products.findById(req.params.id, (err, allProducts) => {
+    Products.findById(req.params.id, (err, allProducts) => {
         res.render('show.ejs', {
             products: allProducts
-        }) 
+        })
     })
 })
 
