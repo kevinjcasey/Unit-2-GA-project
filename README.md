@@ -4,9 +4,9 @@ Products database:
 
 Categories -- 
     -Drinkware
+        -Coupe
         -Martini
         -Rocks
-        -Coupe - Leopold
         -Highball
         -Hurricane
         -Tiki mug
@@ -23,6 +23,6 @@ Categories --
         -Peeler
         -Juicer
         -Roll-up kit
-    -Aprons/kits
+        -Aprons
     -Books
     -Bitters
