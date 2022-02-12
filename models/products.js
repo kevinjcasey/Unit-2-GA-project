@@ -4,22 +4,6 @@ const products = [
 
     {
         name: 'Coupe',
-        price: 8,
-        image: '',
-        description: 'Vestibulum auctor dapibus neque',
-        category: 'Glassware',
-        purchased: false
-    },
-    {
-        name: 'Martini/Cocktail',
-        price: 8,
-        image: '',
-        description: 'Vestibulum auctor dapibus neque',
-        category: 'Glassware',
-        purchased: false
-    },
-    {
-        name: 'Old-fashioned',
         price: 10,
         image: '',
         description: 'Vestibulum auctor dapibus neque',
@@ -27,24 +11,40 @@ const products = [
         purchased: false
     },
     {
-        name: '',
-        price: '',
+        name: 'Martini/Cocktail',
+        price: 10,
         image: '',
         description: 'Vestibulum auctor dapibus neque',
         category: 'Glassware',
         purchased: false
     },
     {
-        name: '',
-        price: '',
+        name: 'Old-fashioned',
+        price: 8,
         image: '',
         description: 'Vestibulum auctor dapibus neque',
         category: 'Glassware',
         purchased: false
     },
     {
-        name: '',
-        price: '',
+        name: 'Highball',
+        price: 8,
+        image: '',
+        description: 'Vestibulum auctor dapibus neque',
+        category: 'Glassware',
+        purchased: false
+    },
+    {
+        name: 'Hurricane',
+        price: 9,
+        image: '',
+        description: 'Vestibulum auctor dapibus neque',
+        category: 'Glassware',
+        purchased: false
+    },
+    {
+        name: 'Tiki mug',
+        price: 12,
         image: '',
         description: 'Vestibulum auctor dapibus neque',
         category: 'Glassware',
@@ -54,145 +54,136 @@ const products = [
 // ====== Bar essentials ====== //
 
 {
-    name: '',
-    price: '',
+    name: 'Stainless steel barspoon',
+    price: 12,
     image: '',
     description: 'Nunc dignissim risus id metus',
-    category: '',
+    category: 'Essentials',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Copper barspoon',
+    price: 14,
     image: '',
     description: 'Nunc dignissim risus id metus',
-    category: '',
+    category: 'Essentials',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Pineapple barspoon',
+    price: 16,
     image: '',
     description: 'Nunc dignissim risus id metus',
-    category: '',
+    category: 'Essentials',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Japanese style jigger, copper',
+    price: 12,
     image: '',
     description: 'Nunc dignissim risus id metus',
-    category: '',
+    category: 'Essentials',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Bell jigger, copper',
+    price: 16,
     image: '',
     description: 'Nunc dignissim risus id metus',
-    category: '',
+    category: 'Essentials',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Tin on Tin Boston Shaker, stainless steel',
+    price: 16,
     image: '',
     description: 'Nunc dignissim risus id metus',
-    category: '',
+    category: 'Essentials',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Koriko Weighted Shaker tins',
+    price: 30,
     image: '',
     description: 'Nunc dignissim risus id metus',
-    category: '',
+    category: 'Essentials',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Yarai Mixing Glass',
+    price: 25,
     image: '',
     description: 'Nunc dignissim risus id metus',
-    category: '',
+    category: 'Essentials',
     purchased: false
 },
-
+{
+    name: 'Classic Hawthorne Strainer',
+    price: 10,
+    image: '',
+    description: 'Nunc dignissim risus id metus',
+    category: 'Essentials',
+    purchased: false
+},
+{
+    name: 'Juelp Strainer, copper-plated',
+    price: 14,
+    image: '',
+    description: 'Nunc dignissim risus id metus',
+    category: 'Essentials',
+    purchased: false
+},
 // ====== Ice stuff ===== //
 
 {
-    name: '',
-    price: '',
+    name: 'Branded ice stamp',
+    price: 30,
     image: '',
     description: 'Praesent placerat risus quis eros',
-    category: '',
+    category: 'Ice',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Cube tray, 2in',
+    price: 8,
     image: '',
     description: 'Praesent placerat risus quis eros',
-    category: '',
+    category: 'Ice',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Ice ball maker, aerospace aluminum',
+    price: 125,
     image: '',
     description: 'Praesent placerat risus quis eros',
-    category: '',
-    purchased: false
-},
-{
-    name: '',
-    price: '',
-    image: '',
-    description: 'Praesent placerat risus quis eros',
-    category: '',
+    category: 'Ice',
     purchased: false
 },
 
 // ====== Accessories ====== //
 
 {
-    name: '',
-    price: '',
+    name: 'Roll-up kit, blue denim',
+    price: 60,
     image: '',
     description: 'Integer vitae libero ac risus egestas placerat',
-    category: '',
+    category: 'Accessories',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Juicer, stainless steel',
+    price: 15,
     image: '',
     description: 'Integer vitae libero ac risus egestas placerat',
-    category: '',
+    category: 'Accessories',
     purchased: false
 },
 {
-    name: '',
-    price: '',
+    name: 'Citrus peeler',
+    price: 6,
     image: '',
     description: 'Integer vitae libero ac risus egestas placerat',
-    category: '',
-    purchased: false
-},
-{
-    name: '',
-    price: '',
-    image: '',
-    description: 'Integer vitae libero ac risus egestas placerat',
-    category: '',
-    purchased: false
-},
-{
-    name: '',
-    price: '',
-    image: '',
-    description: 'Integer vitae libero ac risus egestas placerat',
-    category: '',
+    category: 'Accessories',
     purchased: false
 },
 

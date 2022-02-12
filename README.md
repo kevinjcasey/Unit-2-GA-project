@@ -23,6 +23,10 @@ Categories --
         -Peeler
         -Juicer
         -Roll-up kit
-        -Aprons
     -Books
     -Bitters
+
+
+Store names:
+Life behind bars
+

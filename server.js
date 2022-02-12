@@ -51,11 +51,36 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //Routes
 //====================
 
+// -------- Home page ------- //
+
+app.get('/home', (req, res) => {
+    res.render('home.ejs')
+})
+
+// --------- Categories page -------- // 
+
+app.get('/categories', (req, res) => {
+    res.render('categories.ejs')
+})
+
+// -------- Glassware -------- //
+
 app.get('/glassware', (req, res) => {
     res.render('glassware.ejs', {
         products: products
     });
 })
+
+// -------- Info / Show ------- //
+
+app.get('/glassware/:id', (req, res) => {
+    products.findById(req.params.id, (err, allProducts) => {
+        res.render('show.ejs', {
+            products: allProducts
+        }) 
+    })
+})
+
 //====================
 //Listener
 //====================
