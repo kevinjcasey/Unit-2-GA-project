@@ -8,7 +8,7 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const productSchema = require('./models/productSchema');
-const Products = require('./models/products');
+// const Products = require('./models/products');
 
 //====================
 //Port
@@ -89,23 +89,30 @@ app.get('/categories', (req, res) => {
 // -------- Glassware -------- //
 
 app.get('/glassware', (req, res) => {
+    productSchema.find({}, (err, foundGlassware) => {
         res.render('glassware.ejs', {
-            products: Products,
+            products: foundGlassware,
             tabTitle: 'Glassware'
         })
     })
+})
 
 // -------- Product Info / Show ------- //
 
 app.get('/glassware/:id', (req, res) => {
     // Why won't Products work here?
-        productSchema.findById(req.params.id, (err, Products) => {
-            res.render('show.ejs', {
-                products: Products,
-                tabTitle: 'Glassware'
-            })
+    productSchema.findById(req.params.id, (err, Products) => {
+        res.render('show.ejs', {
+            products: Products,
+            tabTitle: 'Glassware'
         })
     })
+})
+
+app.get('/cart', (req, res) => {
+
+})
+
 
 //====================
 //Listener
