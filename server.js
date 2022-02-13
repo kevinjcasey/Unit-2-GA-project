@@ -36,21 +36,10 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //Seeding data
 //====================
 
-
-    // productSchema.create (Products, (err, data) => {
-    // if (err) console.log( err.message )
-    // console.log("added provided products data");
-    // })
-
-
-// app.get('/products/seed', (req,res) => {
-//     productSchema.create(
-//       [
-//         Products
-//       ], (err, data) => {
-//       console.log("seeding worked");
-//     })
-//   })
+// productSchema.create (Products, (err, data) => {
+// if (err) console.log( err.message )
+// console.log("added provided products data");
+// })
 
 //====================
 //Middleware
@@ -71,34 +60,52 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //Routes
 //====================
 
+// app.get('/home/new', (req, res) => {
+//     res.render('new.ejs');
+// })
+
+// app.post('/home', (req, res) => {
+//     productSchema.create(req.body, (err, createdProduct) => {
+//         res.redirect('/home')
+//     })
+// })
+
 // -------- Home page ------- //
 
 app.get('/home', (req, res) => {
-    res.render('home.ejs')
+    res.render('home.ejs', {
+        tabTitle: 'Home'
+    })
 })
 
 // --------- Categories page -------- // 
 
 app.get('/categories', (req, res) => {
-    res.render('categories.ejs')
+    res.render('categories.ejs', {
+        tabTitle: 'Categories'
+    })
 })
 
 // -------- Glassware -------- //
 
 app.get('/glassware', (req, res) => {
-    res.render('glassware.ejs', {
-        products: Products
-    }); 
-})
+        res.render('glassware.ejs', {
+            products: Products,
+            tabTitle: 'Glassware'
+        })
+    })
+
 // -------- Product Info / Show ------- //
 
 app.get('/glassware/:id', (req, res) => {
-    Products.findById(req.params.id, (err, allProducts) => {
-        res.render('show.ejs', {
-            products: allProducts
+    // Why won't Products work here?
+        productSchema.findById(req.params.id, (err, Products) => {
+            res.render('show.ejs', {
+                products: Products,
+                tabTitle: 'Glassware'
+            })
         })
     })
-})
 
 //====================
 //Listener
