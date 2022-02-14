@@ -108,6 +108,7 @@ app.get('/glassware/:id', (req, res) => {
     })
 })
 
+// -------- Create new user  ------- //
 app.get('/home/new', (req, res) => {
     res.render('new.ejs')
 })
@@ -117,6 +118,12 @@ app.post('/home', (req, res) => {
         console.log(createdUser)
         res.redirect('/home')
     })
+})
+
+// -------- Cart / Add-to Cart ------- //
+
+app.get('/cart', (req, res) => {
+     
 })
 //====================
 //Listener
