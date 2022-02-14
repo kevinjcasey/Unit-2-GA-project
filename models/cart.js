@@ -4,4 +4,6 @@ const cart = [
     }
 ]
 
+// add qty to this 
+
 module.exports = cart

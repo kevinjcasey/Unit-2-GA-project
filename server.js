@@ -123,7 +123,7 @@ app.post('/home', (req, res) => {
 // -------- Cart / Add-to Cart ------- //
 
 app.get('/cart', (req, res) => {
-     
+     res.send('cart page is linked')
 })
 //====================
 //Listener
