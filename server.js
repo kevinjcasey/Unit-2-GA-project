@@ -8,7 +8,9 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const productSchema = require('./models/productSchema');
-// const Products = require('./models/products');
+const Products = require('./models/products');
+const Users = require('./models/users')
+const userSchema = require('./models/userSchema')
 
 //====================
 //Port
@@ -41,6 +43,10 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // console.log("added provided products data");
 // })
 
+// userSchema.create (Users, (err, data) => {
+//     if (err) console.log( err.message )
+//     console.log("added provided user data");
+// })
 //====================
 //Middleware
 //====================
@@ -60,22 +66,15 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //Routes
 //====================
 
-// app.get('/home/new', (req, res) => {
-//     res.render('new.ejs');
-// })
-
-// app.post('/home', (req, res) => {
-//     productSchema.create(req.body, (err, createdProduct) => {
-//         res.redirect('/home')
-//     })
-// })
-
 // -------- Home page ------- //
 
 app.get('/home', (req, res) => {
-    res.render('home.ejs', {
-        tabTitle: 'Home'
-    })
+    userSchema.find({}, (err, foundUsers) => {
+        res.render('home.ejs', {
+            users: foundUsers,
+            tabTitle: 'Home'
+        })    
+    })   
 })
 
 // --------- Categories page -------- // 
@@ -109,11 +108,16 @@ app.get('/glassware/:id', (req, res) => {
     })
 })
 
-app.get('/cart', (req, res) => {
-
+app.get('/home/new', (req, res) => {
+    res.render('new.ejs')
 })
 
-
+app.post('/home', (req, res) => {
+    userSchema.create(req.body, (err, createdUser) => {
+        console.log(createdUser)
+        res.redirect('/home')
+    })
+})
 //====================
 //Listener
 //====================
