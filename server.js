@@ -95,30 +95,39 @@ app.use('/sessions', sessionsController)
 //====================
 
 // -------- Create new user  ------- //
+
+app.get('/users/new', (req, res) => {
+    res.render('users/new.ejs', {
+        currentUser: req.session.currentUser
+    })
+})
+
+// ---------- Login route ---------- //
+
 app.get('/sessions/new', (req, res) => {
     res.render('sessions/new.ejs', {
         currentUser: req.session.currentUser
     })
 })
 
-app.post('/', (req, res) => {
-    userSchema.create(req.body, (err, createdUser) => {
-        console.log(createdUser)
-        res.redirect('/')
-    })
-})
+// app.post('/', (req, res) => {
+//     userSchema.create(req.body, (err, createdUser) => {
+//         console.log(createdUser)
+//         res.redirect('/')
+//     })
+// })
 
 // -------- Home page ------- //
 
 app.get('/', (req, res) => {
-    userSchema.find({}, (err, foundUsers) => {
+    // userSchema.find({}, (err, foundUsers) => {
         res.render('home.ejs', {
-            users: foundUsers,
+            // users: foundUsers,
             tabTitle: 'Home',
             currentUser: req.session.currentUser
         })    
     })   
-})
+// })
 
 // --------- Categories page -------- // 
 

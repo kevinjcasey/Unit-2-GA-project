@@ -2,9 +2,9 @@
     <nav>
         <a href="/">Home</a>
         <a href="/categories">Shop All</a>
-        <div>
+        
         <% if (currentUser) { %>
-            <p>Welcome <%= currentUser.username %></p>
+            Welcome <%= currentUser.username %>
             <form action="/sessions?_method=DELETE" method="POST">
                 <input type="submit" value="Log Out" />
             </form>
@@ -12,6 +12,6 @@
                 <a href="/users/new">Sign Up</a>
                 <a href="/sessions/new">Log in</a>
             <% } %>
-        </div>
+        
     </nav>
 </header>
