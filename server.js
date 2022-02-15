@@ -9,8 +9,15 @@ const db = mongoose.connection;
 require('dotenv').config()
 const productSchema = require('./models/productSchema');
 const Products = require('./models/products');
-const Users = require('./models/users')
-const userSchema = require('./models/userSchema')
+const Users = require('./models/usersDB')
+const userSchema = require('./models/users')
+
+
+// ========= User Auth stuff ========= //
+
+const userController = require('./controllers/users_controller.js')
+
+// ======= ^^ User Auth stuff ^^ ======= //
 
 //====================
 //Port
@@ -62,13 +69,31 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+// ========= User Auth stuff ========= //
+
+app.use('/users', userController)
+
+// ======= ^^ User Auth stuff ^^ ======= //
+
 //====================
 //Routes
 //====================
 
+// -------- Create new user  ------- //
+app.get('/new', (req, res) => {
+    res.render('new.ejs')
+})
+
+app.post('/', (req, res) => {
+    userSchema.create(req.body, (err, createdUser) => {
+        console.log(createdUser)
+        res.redirect('/')
+    })
+})
+
 // -------- Home page ------- //
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     userSchema.find({}, (err, foundUsers) => {
         res.render('home.ejs', {
             users: foundUsers,
@@ -108,17 +133,6 @@ app.get('/glassware/:id', (req, res) => {
     })
 })
 
-// -------- Create new user  ------- //
-app.get('/home/new', (req, res) => {
-    res.render('new.ejs')
-})
-
-app.post('/home', (req, res) => {
-    userSchema.create(req.body, (err, createdUser) => {
-        console.log(createdUser)
-        res.redirect('/home')
-    })
-})
 
 // -------- Cart / Add-to Cart ------- //
 

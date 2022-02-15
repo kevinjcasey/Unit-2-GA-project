@@ -1,10 +1,12 @@
-const users = [
-    {
-        username: 'Barkeep',
-        password: 'ThisIsFake!2!3',
-        email: 'barkeep428@something.com',
-        cart:[]
-    }
-]
+const mongoose = require('mongoose')
 
-module.exports = users
+const userSchema = new mongoose.Schema({
+    username: {type: String, unique: true, required: true},
+    password: String
+    // email: String,
+    // cart: [String]
+})
+
+const User = mongoose.model('Users', userSchema)
+
+module.exports = User
