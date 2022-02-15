@@ -2,5 +2,16 @@
     <nav>
         <a href="/">Home</a>
         <a href="/categories">Shop All</a>
+        <div>
+        <% if (currentUser) { %>
+            <p>Welcome <%= currentUser.username %></p>
+            <form action="/sessions?_method=DELETE" method="POST">
+                <input type="submit" value="Log Out" />
+            </form>
+            <% } else { %>
+                <a href="/users/new">Sign Up</a>
+                <a href="/sessions/new">Log in</a>
+            <% } %>
+        </div>
     </nav>
 </header>

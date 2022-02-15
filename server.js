@@ -13,9 +13,13 @@ const Users = require('./models/usersDB')
 const userSchema = require('./models/users')
 
 
+
 // ========= User Auth stuff ========= //
 
 const userController = require('./controllers/users_controller.js')
+// require('express-session').config()
+const session = require('express-session')
+const sessionsController = require('./controllers/sessions_controller.js')
 
 // ======= ^^ User Auth stuff ^^ ======= //
 
@@ -54,6 +58,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //     if (err) console.log( err.message )
 //     console.log("added provided user data");
 // })
+
 //====================
 //Middleware
 //====================
@@ -73,6 +78,16 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 app.use('/users', userController)
 
+app.use(
+    session({
+        secret: process.env.SECRET,
+        resave: false,
+        saveUninitialized: false
+    })
+)
+
+app.use('/sessions', sessionsController)
+
 // ======= ^^ User Auth stuff ^^ ======= //
 
 //====================
@@ -80,8 +95,10 @@ app.use('/users', userController)
 //====================
 
 // -------- Create new user  ------- //
-app.get('/new', (req, res) => {
-    res.render('new.ejs')
+app.get('/sessions/new', (req, res) => {
+    res.render('sessions/new.ejs', {
+        currentUser: req.session.currentUser
+    })
 })
 
 app.post('/', (req, res) => {
@@ -97,7 +114,8 @@ app.get('/', (req, res) => {
     userSchema.find({}, (err, foundUsers) => {
         res.render('home.ejs', {
             users: foundUsers,
-            tabTitle: 'Home'
+            tabTitle: 'Home',
+            currentUser: req.session.currentUser
         })    
     })   
 })
@@ -106,7 +124,8 @@ app.get('/', (req, res) => {
 
 app.get('/categories', (req, res) => {
     res.render('categories.ejs', {
-        tabTitle: 'Categories'
+        tabTitle: 'Categories',
+        currentUser: req.session.currentUser
     })
 })
 
@@ -116,7 +135,8 @@ app.get('/glassware', (req, res) => {
     productSchema.find({}, (err, foundGlassware) => {
         res.render('glassware.ejs', {
             products: foundGlassware,
-            tabTitle: 'Glassware'
+            tabTitle: 'Glassware',
+            currentUser: req.session.currentUser
         })
     })
 })
@@ -128,7 +148,8 @@ app.get('/glassware/:id', (req, res) => {
     productSchema.findById(req.params.id, (err, Products) => {
         res.render('show.ejs', {
             products: Products,
-            tabTitle: 'Glassware'
+            tabTitle: 'Glassware',
+            currentUser: req.session.currentUser
         })
     })
 })
