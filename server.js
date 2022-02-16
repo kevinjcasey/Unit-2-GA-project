@@ -136,7 +136,17 @@ app.get('/categories', (req, res) => {
     })
 })
 
-// -------- Glassware -------- //
+// -------- Category routes -------- //
+
+app.get('/essentials', (req, res) => {
+    productSchema.find({}, (err, foundEssentials) => {
+        res.render('essentials.ejs', {
+            products: foundEssentials,
+            tabTitle: 'Essentials',
+            currentUser: req.session.currentUser
+        })
+    })
+})
 
 app.get('/glassware', (req, res) => {
     productSchema.find({}, (err, foundGlassware) => {
@@ -148,19 +158,37 @@ app.get('/glassware', (req, res) => {
     })
 })
 
-// -------- Product Info / Show ------- //
-
-app.get('/glassware/:id', (req, res) => {
-    // Why won't Products work here?
-    productSchema.findById(req.params.id, (err, Products) => {
-        res.render('show.ejs', {
-            products: Products,
-            tabTitle: 'Glassware',
+app.get('/accessories', (req, res) => {
+    productSchema.find({}, (err, foundAccessories) => {
+        res.render('accessories.ejs', {
+            products: foundAccessories,
+            tabTitle: 'Accessories',
             currentUser: req.session.currentUser
         })
     })
 })
 
+app.get('/ice', (req, res) => {
+    productSchema.find({}, (err, foundIce) => {
+        res.render('ice.ejs', {
+            products: foundIce,
+            tabTitle: 'Ice',
+            currentUser: req.session.currentUser
+        })
+    })
+})
+
+// -------- Product Info / Show ------- //
+
+app.get('/:id', (req, res) => {
+    productSchema.findById(req.params.id, (err, Products) => {
+        res.render('show.ejs', {
+            products: Products,
+            tabTitle: Products.name,
+            currentUser: req.session.currentUser
+        })
+    })
+})
 
 // -------- Cart / Add-to Cart ------- //
 
