@@ -9,6 +9,40 @@
 
     <h1>Show page (individual product page)</h1>
     The <%= products.name %> is <%= products.price %>
+    <!-- Yup, I realize this isn't DRY whatsoever, but I fucked up in uploading my images to the database -->
+    <% if (products.name === 'Coupe') { %>
+        <img src="/coupe.jpeg">
+    <% } else if (products.name === 'Highball') { %>
+        <img src="/highball.jpeg">
+    <% } else if (products.name === 'Old Fashioned') { %>
+        <img src="/old-fashioned-2.jpeg">
+    <% } else if (products.name === 'Tiki Mug') { %>
+        <img src="/tiki-mug-2.jpeg">    
+    <% } else if (products.name === 'Pineapple Barspoon') { %>
+        <img src="/pineapple-barspoon-1.jpeg">    
+    <% } else if (products.name === 'Bell Jigger') { %>
+        <img src="/bell-jigger.jpeg">
+    <% } else if (products.name === 'Yarai Mixing Glass') { %>
+        <img src="/mixing-glass.jpg">
+    <% } else if (products.name === 'Koriko Weighted Shaker Tins') { %>
+        <img src="/boston-shaker-1.jpeg">
+    <% } else if (products.name === 'Japanese Style Jigger') { %>
+        <img src="/Japanese-jigger.jpeg">
+    <% } else if (products.name === 'Custom Ice Stamp') { %>
+        <img src="/ice-stamp-combined-2.jpg">
+    <% } else if (products.name === 'Roll-up Kit') { %>
+        <img src="/roll-up-kit-2.jpeg">
+    <% } else if (products.name === 'Ice Ball Maker') { %>
+        <img src="/ice-ball-maker.jpeg">
+    <% } else if (products.name === 'Hawthorne Strainer') { %>
+        <img src="/hawthorne-strainer.jpeg">
+    <% } else if (products.name === 'Citrus Peeler') { %>
+        <img src="/citrus-peeler.jpeg">
+    <% } else if (products.name === 'Stainless Steel Juicer') { %>
+        <img src="/juicer-2.jpeg">
+    <% } else if (products.name === 'Champagne') { %>
+        <img src="/champagne.jpg">
+    <% } %>
 
     <button><a href="/cart">Add to Cart</a></button>
 </body>

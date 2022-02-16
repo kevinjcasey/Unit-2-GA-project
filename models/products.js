@@ -5,7 +5,7 @@ const products = [
     {
         name: 'Coupe',
         price: 10,
-        image: '',
+        image: 'https://i.imgur.com/U7ldPlh.jpg',
         description: 'Vestibulum auctor dapibus neque',
         category: 'Glassware',
         purchased: false,
