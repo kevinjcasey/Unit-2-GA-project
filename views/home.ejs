@@ -2,13 +2,26 @@
 <html lang="en">
     <!---------- HEAD TAG ----------->
     <%- include ('./partials/head.ejs') %>
+
 <body>
     <!---------- HEADER ----------->
 
     <%- include ('./partials/header.ejs') %>
-    
-    <h1>Life Behind Bars</h1>
-    <button><a href="/categories">Shop All</a></button>
-    <!-- <button><a href="/new">Create a user</a></button> -->
+    <section class="container-fluid">
+
+        <div class="text-center container-fluid">
+            <div class="img-fluid main-img">
+                <h1 class="display-2 title">Life Behind Bars</h1>
+                <h3 class="display-5 title">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</h3>
+            </div>
+        <!-- <img class="img-fluid" src="https://i.imgur.com/Flleioi.jpg">  -->
+        </div>
+        
+        <h2>Browse Our Collection</h2>
+        <button><a href="/essentials">Bar Essentials</a></button>
+        <button><a href="/glassware">Glassware</a></button>
+        <button><a href="/accessories">Accessories</a></button>
+        <button><a href="/ice">Ice</a></button>
+    </section>
 </body>
 </html>

@@ -9,8 +9,8 @@
 
     <h1>Show page (individual product page)</h1>
     The <%= products.name %> is <%= products.price %>
-    <!-- Yup, I realize this isn't DRY whatsoever, but I fucked up in uploading my images to the database -->
-    <% if (products.name === 'Coupe') { %>
+    <!-- Yup, I realize this isn't DRY whatsoever, but I fucked up in uploading my images to the database so this is what I'm stuck with -->
+    <% if (products.name === 'Coupe') { %> 
         <img src="/coupe.jpeg">
     <% } else if (products.name === 'Highball') { %>
         <img src="/highball.jpeg">
