@@ -8,11 +8,9 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const productSchema = require('./models/productSchema');
-const Products = require('./models/products');
-const Users = require('./models/usersDB')
-const userSchema = require('./models/users')
-
-
+// const Products = require('./models/products');
+// const Users = require('./models/usersDB')
+// const userSchema = require('./models/users')
 
 // ========= User Auth stuff ========= //
 

@@ -5,8 +5,10 @@ const User = require('../models/users.js')
 
 sessions.get('/sessions/new,', (req, res) => {
     res.render('sessions/new.ejs', {
-        currentUser: req.session.currentUser,
+        // currentUser: req.session.currentUser,
+        currentUser: req.body.username
     })
+    console.log(req.body.username);
 })
 
 sessions.post('/', (req, res) => {
