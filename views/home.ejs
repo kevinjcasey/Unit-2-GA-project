@@ -4,24 +4,68 @@
     <%- include ('./partials/head.ejs') %>
 
 <body>
-    <!---------- HEADER ----------->
+        <!---------- HEADER ----------->
 
-    <%- include ('./partials/header.ejs') %>
-    <section class="container-fluid">
-
-        <div class="text-center container-fluid">
-            <div class="img-fluid main-img">
-                <h1 class="display-2 title">Life Behind Bars</h1>
-                <h3 class="display-5 title">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</h3>
+        <%- include ('./partials/header.ejs') %>
+            <div class="container"></div>        
+                <div class="main-img">
+                        <h1 class="display-2 title">Life Behind Bars</h1>
+                        <h3 class="display-5 title">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</h3>  
+                </div>
             </div>
-        <!-- <img class="img-fluid" src="https://i.imgur.com/Flleioi.jpg">  -->
-        </div>
-        
-        <h2>Browse Our Collection</h2>
-        <button><a href="/essentials">Bar Essentials</a></button>
-        <button><a href="/glassware">Glassware</a></button>
-        <button><a href="/accessories">Accessories</a></button>
-        <button><a href="/ice">Ice</a></button>
-    </section>
+
+            <h2 class="display-4 collections">Browse Our Collection</h2>
+            <!-- <div class="essentials">
+               <button class="btn btn-outline-secondary"><a href="/essentials">Bar Essentials</a></button> 
+            </div> -->
+
+            <div class="container">
+                <div class="card row" id="card-hover" style="width: 24rem">
+                    <div class="col">
+                       <a href="/essentials">
+                            <img src="/Japanese-jigger.jpeg" class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text">Bar Essentials</p>
+                            </div>
+                        </a> 
+                    </div>
+                </div> 
+                
+                <div class="card row" id="card-hover" style="width: 24rem">
+                    <div class="col">
+                        <a href="/glassware">
+                            <img src="/highball.jpeg" class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text">Glassware</p>
+                            </div>
+                        </a>  
+                    </div>  
+                </div> 
+
+                <div class="card row" id="card-hover" style="width: 24rem">
+                    <div class="col">
+                        <a href="/accessories">
+                            <img src="/roll-up-kit-2.jpeg" class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text">Accessories</p>
+                            </div>
+                        </a>   
+                    </div>   
+                </div> 
+
+                <div class="card row" id="card-hover" style="width: 24rem">
+                    <div class="col">
+                        <a href="/ice">
+                            <img src="/ice-stamp-glass.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <p class="card-text">Ice Tools</p>
+                            </div>
+                        </a>  
+                    </div>   
+                </div> 
+            </div>
+            <!-- <button><a href="/glassware">Glassware</a></button>
+            <button><a href="/accessories">Accessories</a></button>
+            <button><a href="/ice">Ice Tools</a></button> -->
 </body>
 </html>

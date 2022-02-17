@@ -6,6 +6,12 @@ body {
     background-repeat: no-repeat; */
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -15,8 +21,9 @@ a {
     background-image: url(https://i.imgur.com/Flleioi.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 300px;
-    margin: 1rem;
+    min-height: 700px;
+    /* padding: 300px; */
+    /* margin: 1rem; */
 }
 
 .nav {
@@ -25,5 +32,35 @@ a {
 }
 
 .title {
-    padding: 2rem;
+    padding: 3rem;
+    color: whitesmoke;
+    text-align: left;
+}
+
+.collections {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* .essentials {
+    background-image: url(/Japanese-jigger.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    width: 100%;
+    background-position: 50%;
+} */
+
+.card-text {
+    text-align: center;
+}
+
+#card-hover {
+    filter: drop-shadow(8px 8px 10px rgb(41, 41, 41))
+}
+
+#card-hover:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-out;
+    cursor: pointer;
 }
