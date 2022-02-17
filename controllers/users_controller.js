@@ -10,11 +10,28 @@ users.get('/users/new', (req, res) => {
   console.log(currentUser);
 })
 
+// ---------- Edit User Info ------------ //
+
+users.put('/users/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updateModel) => {
+    res.redirect('/profile')
+  })
+  console.log('Please work');
+})
+
+// ------------ Delete Account ---------- //
+
+users.delete('/:id', (req, res) => {
+  User.findByIdAndRemove(req.params.id, (err, data) => {
+      res.redirect('/')
+  })
+})
+
 users.post('/', (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
   User.create(req.body, (err, createdUser) => {
     console.log('user is created', createdUser)
-    res.redirect('/')
+    res.redirect('/sessions/new')
     // How to direct to new session?
   })
 })

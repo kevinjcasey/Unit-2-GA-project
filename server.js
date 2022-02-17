@@ -107,7 +107,6 @@ app.get('/edit', (req, res) => {
         tabTitle: 'Edit',
         currentUser: req.session.currentUser
     })
-    console.log('Please work');
 })
 
 // ---------- Login route ---------- //
