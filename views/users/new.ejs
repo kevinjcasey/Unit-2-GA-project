@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <!-- Could not get my partials link to work for head and header -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/styles.css">
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <title>Bar Supply | Sign Up</title>
+    </head>
+
 <body>
+    <header>
+        <nav class="nav justify-content-between">
+            <a class="nav-link h4" href="/">LBB</a>
+            <% if (currentUser) { %>
+            <div class="nav-link">
+                <p>Hello, <%= currentUser.username %></p>
+                <form action="/sessions?_method=DELETE" method="POST">
+                    <button>Log Out</button>
+                </form>
+                <% } else { %>
+                <div class="nav-link">
+                    <a class="nav-link" href="/users/new">Sign Up</a>
+                    <a class="nav-link" href="/sessions/new">Log in</a>
+                </div>
+                <% } %>  
+            </div>  
+        </nav>
+    </header>
+
     <h1>New User</h1>
     <form action="/users" method="POST">
         Username: <input type="text" name="username" value=""/><br/>

@@ -108,6 +108,15 @@ app.get('/sessions/new', (req, res) => {
     })
 })
 
+// ---------- User Profile  ----------- //
+
+app.get('/profile', (req, res) => {
+    res.render('profile.ejs', {
+        tabTitle: 'Your Profile',
+        currentUser: req.session.currentUser
+    })
+})
+
 // app.post('/', (req, res) => {
 //     userSchema.create(req.body, (err, createdUser) => {
 //         console.log(createdUser)
@@ -189,6 +198,7 @@ app.get('/:id', (req, res) => {
         })
     })
 })
+
 
 // -------- Cart / Add-to Cart ------- //
 

@@ -3,7 +3,7 @@
         <a class="nav-link h4" href="/">LBB</a>
         <% if (currentUser) { %>
         <div class="nav-link">
-            <p>Hello, <%= currentUser.username %></p>
+            <p>Hello, <a href="/profile"><%= currentUser.username %></a></p>
             <form action="/sessions?_method=DELETE" method="POST">
                 <button>Log Out</button>
             </form>
