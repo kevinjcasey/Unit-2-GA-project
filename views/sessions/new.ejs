@@ -16,7 +16,7 @@
             <a class="nav-link h4" href="/">LBB</a>
             <% if (currentUser) { %>
             <div class="nav-link">
-                <p>Hello, <%= currentUser.username %></p>
+                <p>Cheers, <%= currentUser.firstName %></p>
                 <form action="/sessions?_method=DELETE" method="POST">
                     <button>Log Out</button>
                 </form>
@@ -30,13 +30,18 @@
         </nav>
     </header>
 
-    <h1>Login</h1>
-    <form action="/sessions" method="POST">
-        Username: <input type="text" name="username" value=""/><br/>
-        Password: <input type="text" name="password" value =""/><br/>
-        <!-- Email: <input type="text" name="email" /><br/> -->
+    <section class="container sign-up">
+        <h1 class="display-4">Login</h1>
+        <form class="col" action="/sessions" method="POST">
+            <label class="h5 col" for="username">Username</label>
+            <input type="text" id="username" name="username" value=""/>
 
-        <input type="submit" value="Login" />
-    </form>
+            <label class="h5 col" for="password">Password</label>
+            <input type="password" id="password" name="password" value =""/>
+
+            <br/>
+            <input class="submit-btn" type="submit" value="Login" />
+        </form>
+    </section>
 </body>
 </html>

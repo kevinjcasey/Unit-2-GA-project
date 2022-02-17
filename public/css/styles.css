@@ -64,3 +64,18 @@ a {
     transition: all 0.3s ease-out;
     cursor: pointer;
 }
+
+.sign-up, .profile {
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.h5, .col {
+    padding: 1rem;
+}
+
+.submit-btn {
+    padding: 5px;
+    margin-top: 10px;
+}

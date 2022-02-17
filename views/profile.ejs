@@ -8,10 +8,17 @@
     <%- include ('./partials/header.ejs') %>
 
 
-        <h1>Profile page</h1>
-
-        <%= currentUser.username %>
         
+    <section class="container-fluid profile">
+        <h1 class="display-4">Account info</h1>
+        <p class="h5 col">Name: <%= currentUser.firstName %> <%= currentUser.lastName %></p>
+        <p class="h5 col">Username: <%= currentUser.username %></p> 
+        <p class="h5 col">Email: <%= currentUser.email %></p>
+        <p class="h5 col">Favorite Cocktail: <%= currentUser.favoriteCocktail %></p>
+    </section> 
+    <div class="container-fluid">
+        <button><a href="/edit">Edit Profile</a></button>
+    </div>   
 
 </body>
 </html>

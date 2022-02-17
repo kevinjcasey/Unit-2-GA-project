@@ -100,6 +100,16 @@ app.get('/users/new', (req, res) => {
     })
 })
 
+// --------- Edit profile ----------- // 
+
+app.get('/edit', (req, res) => {
+    res.render('edit.ejs', {
+        tabTitle: 'Edit',
+        currentUser: req.session.currentUser
+    })
+    console.log('Please work');
+})
+
 // ---------- Login route ---------- //
 
 app.get('/sessions/new', (req, res) => {
