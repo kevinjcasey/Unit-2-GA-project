@@ -12,7 +12,7 @@ users.get('/users/new', (req, res) => {
 
 // ---------- Edit User Info ------------ //
 
-users.put('/users/:id', (req, res) => {
+users.put('/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updateModel) => {
     res.redirect('/profile')
   })

@@ -20,6 +20,7 @@ sessions.post('/', (req, res) => {
             res.send('<a href="/">Sorry, no user found </a>')
         } else {
             if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+                // Change something here to update current user
                 req.session.currentUser = foundUser
                 res.redirect('/')
             } else {

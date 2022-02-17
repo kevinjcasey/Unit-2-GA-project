@@ -9,7 +9,7 @@
 
     <h1>Edit Account</h1>
 
-    <form action="/users/<%=currentUser.id%>?_method=PUT" method="POST">
+    <form action="/users/<%=currentUser._id%>?_method=PUT" method="POST">
         Username: <input type="text" name="username" value="<%= currentUser.username %>" /><br/>
 
         <input type="submit" value="Submit Changes" />
