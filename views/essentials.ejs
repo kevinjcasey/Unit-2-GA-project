@@ -8,12 +8,70 @@
     <%- include ('./partials/header.ejs') %>
 
     <h1>Bar Essentials</h1>
+    <!-- Again, forced to hard code this because I was unable to upload images to the database -->
+    
     <% for (let i = 0; i < products.length; i++) { %>
-        <% if (products[i].category === 'Essentials') { %>
-            <a href="/<%= products[i].id %>">
-                <%= products[i].name %>
-            </a>
-        <% } %>
-    <% } %> 
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2">
+                <% if (products[i].name === 'Pineapple Barspoon') { %>
+                <div class="col mb-4" id="card-hover">
+                    <div class="card">
+                        <img src="/pineapple-barspoon-1.jpeg" class="card-img-top">
+                        <div class="card-body">
+                            <p><%= products[i].name %></p>
+                            <p>$<%= products[i].price %></p>
+                        </div>
+                        <a href="/<%=products[i].id%>" class="stretched-link"></a>
+                    </div>
+                </div>
+                <% } else if (products[i].name === 'Koriko Weighted Shaker Tins') { %>
+                <div class="col" id="card-hover">
+                    <div class="card">
+                        <img src="/boston-shaker-1.jpeg" class="card-img-top">
+                        <div class="card-body">
+                            <p><%= products[i].name %></p>
+                            <p>$<%= products[i].price %></p>
+                        </div>
+                        <a href="/<%=products[i].id%>" class="stretched-link"></a>
+                    </div>
+                </div>
+                <% } else if (products[i].name === 'Yarai Mixing Glass') { %>
+                <div class="col" id="card-hover">
+                    <div class="card">
+                        <img src="/mixing-glass.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <p><%= products[i].name %></p>
+                            <p>$<%= products[i].price %></p>  
+                        </div>
+                        <a href="/<%=products[i].id%>" class="stretched-link"></a>
+                    </div>
+                </div>
+                <% } else if (products[i].name === 'Japanese Style Jigger') { %>
+                <div class="col" id="card-hover">
+                    <div class="card">
+                        <img src="/Japanese-jigger.jpeg" class="card-img-top">
+                        <div class="card-body">
+                            <p><%= products[i].name %></p>
+                            <p>$<%= products[i].price %></p>
+                        </div>    
+                        <a href="/<%=products[i].id%>" class="stretched-link"></a>
+                    </div>
+                </div>
+                <% } else if (products[i].name === 'Bell Jigger') { %>
+                <div class="col" id="card-hover">
+                    <div class="card">
+                        <img src="/bell-jigger.jpeg" class="card-img-top">
+                        <div class="card-body">
+                            <p><%= products[i].name %></p>
+                            <p>$<%= products[i].price %></p>  
+                        </div>
+                        <a href="/<%=products[i].id%>" class="stretched-link"></a>
+                    </div>
+                </div>
+                <% } %>
+            </div>  
+        </div>
+    <% } %>
+        
 </body>
 </html>

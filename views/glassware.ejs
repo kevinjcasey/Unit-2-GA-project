@@ -8,12 +8,62 @@
     <%- include ('./partials/header.ejs') %>
 
     <h1>Glassware page</h1>
-    <% for (let i = 0; i < products.length; i++) { %>
-        <% if (products[i].category === 'Glassware') { %>
-            <a href="/<%= products[i].id %>">
-                <%= products[i].name %>
-            </a>
-        <% } %>
-    <% } %> 
+    
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4">
+              <div class="card">
+                <img src="/coupe.jpeg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="/highball.jpeg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="/old-fashioned-2.jpeg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="/tiki-mug-2.jpeg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                  <img src="/champagne.jpg" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+
+
+
+    </div>
+
+
+
 </body>
 </html>

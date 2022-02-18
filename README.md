@@ -53,3 +53,57 @@ New page displaying a form for:
     -Submit order
 
 
+<div class="container">
+        <div class="card row" id="card-hover" style="width: 24rem">
+            <div class="col">
+               <a href="/essentials">
+                    <img src="/Japanese-jigger.jpeg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">Bar Essentials</p>
+                    </div>
+                </a> 
+            </div>
+        </div> 
+        
+        <div class="card row" id="card-hover" style="width: 24rem">
+            <div class="col">
+                <a href="/glassware">
+                    <img src="/highball.jpeg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">Glassware</p>
+                    </div>
+                </a>  
+            </div>  
+        </div> 
+
+        <div class="card row" id="card-hover" style="width: 24rem">
+            <div class="col">
+                <a href="/accessories">
+                    <img src="/roll-up-kit-2.jpeg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">Accessories</p>
+                    </div>
+                </a>   
+            </div>   
+        </div> 
+
+        <div class="card row" id="card-hover" style="width: 24rem">
+            <div class="col">
+                <a href="/ice">
+                    <img src="/ice-stamp-glass.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">Ice Tools</p>
+                    </div>
+                </a>  
+            </div>   
+        </div> 
+    </div>
+
+
+    <% for (let i = 0; i < products.length; i++) { %>
+        <% if (products[i].category === 'Essentials') { %>
+            <a href="/<%= products[i].id %>">
+                <%= products[i].name %>
+            </a>
+        <% } %>
+    <% } %> 
