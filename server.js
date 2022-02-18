@@ -104,7 +104,7 @@ app.get('/users/new', (req, res) => {
 
 app.get('/edit', (req, res) => {
     res.render('edit.ejs', {
-        tabTitle: 'Edit',
+        // tabTitle: 'Edit',
         currentUser: req.session.currentUser
     })
 })
@@ -121,7 +121,7 @@ app.get('/sessions/new', (req, res) => {
 
 app.get('/profile', (req, res) => {
     res.render('profile.ejs', {
-        tabTitle: 'Your Profile',
+        // tabTitle: 'Your Profile',
         currentUser: req.session.currentUser
     })
 })
@@ -139,7 +139,7 @@ app.get('/', (req, res) => {
     // userSchema.find({}, (err, foundUsers) => {
         res.render('home.ejs', {
             // users: foundUsers,
-            tabTitle: 'Home',
+            // tabTitle: 'Home',
             currentUser: req.session.currentUser
         })    
     })   
@@ -149,7 +149,7 @@ app.get('/', (req, res) => {
 
 app.get('/categories', (req, res) => {
     res.render('categories.ejs', {
-        tabTitle: 'Categories',
+        // tabTitle: 'Categories',
         currentUser: req.session.currentUser
     })
 })
@@ -160,7 +160,7 @@ app.get('/essentials', (req, res) => {
     productSchema.find({}, (err, foundEssentials) => {
         res.render('essentials.ejs', {
             products: foundEssentials,
-            tabTitle: 'Essentials',
+            // tabTitle: 'Essentials',
             currentUser: req.session.currentUser
         })
     })
@@ -170,7 +170,7 @@ app.get('/glassware', (req, res) => {
     productSchema.find({}, (err, foundGlassware) => {
         res.render('glassware.ejs', {
             products: foundGlassware,
-            tabTitle: 'Glassware',
+            // tabTitle: 'Glassware',
             currentUser: req.session.currentUser
         })
     })
@@ -180,7 +180,7 @@ app.get('/accessories', (req, res) => {
     productSchema.find({}, (err, foundAccessories) => {
         res.render('accessories.ejs', {
             products: foundAccessories,
-            tabTitle: 'Accessories',
+            // tabTitle: 'Accessories',
             currentUser: req.session.currentUser
         })
     })
@@ -190,7 +190,7 @@ app.get('/ice', (req, res) => {
     productSchema.find({}, (err, foundIce) => {
         res.render('ice.ejs', {
             products: foundIce,
-            tabTitle: 'Ice',
+            // tabTitle: 'Ice',
             currentUser: req.session.currentUser
         })
     })
@@ -202,7 +202,7 @@ app.get('/:id', (req, res) => {
     productSchema.findById(req.params.id, (err, Products) => {
         res.render('show.ejs', {
             products: Products,
-            tabTitle: Products.name,
+            // tabTitle: Products.name,
             currentUser: req.session.currentUser
         })
     })
