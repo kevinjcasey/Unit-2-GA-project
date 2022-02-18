@@ -7,13 +7,32 @@
     <!---------- HEADER ----------->
     <%- include ('./partials/header.ejs') %>
 
-    <h1>Edit Account</h1>
+    <section class="container-fluid profile edit">
+        <h1 class="display-4">Edit Account</h1>
+        <form class="h5 col "action="/users/<%=currentUser._id%>?_method=PUT" method="POST">
+            <p class="h5 col">
+                <span class="text-uppercase">Username:</span><input type="text" id="username" name="username" value="<%= currentUser.username %>" />
+            </p>
+            <p class="h5 col">
+                <span class="text-uppercase">First Name:</span><input type="text" id="first-name" name="firstName" value="<%= currentUser.firstName %>" />
+            </p>
+            <p class="h5 col">
+                <span class="text-uppercase">Last Name:</span><input type="text" id="last-name" name="lastName" value="<%= currentUser.lastName %>" />
+            </p>
+            <p class="h5 col">
+                <span class="text-uppercase">Email:</span><input type="text" id="email" name="email" value="<%= currentUser.email %>" />
+            </p>
+            <p class="h5 col">
+                <span class="text-uppercase">Favorite Cocktail:</span><input type="text" id="favorite-cocktail" name="favoriteCocktail" value="<%= currentUser.favoriteCocktail %>" />
+            </p>
+            <input <input class="btn btn-secondary btn-lg login" type="submit" value="Submit Changes" />
+        </form>
+    </section> 
 
-    <form action="/users/<%=currentUser._id%>?_method=PUT" method="POST">
-        Username: <input type="text" name="username" value="<%= currentUser.username %>" /><br/>
-
-        <input type="submit" value="Submit Changes" />
-    </form>
+        
+    
+    <!---------- FOOTER ----------->
+    <%- include ('./partials/footer.ejs') %>
 
 
 </body>

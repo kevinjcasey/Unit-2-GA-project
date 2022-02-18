@@ -6,9 +6,7 @@
     <!---------- HEADER ----------->
 
     <%- include ('./partials/header.ejs') %>
-
-    <h1>Show page (individual product page)</h1>
-    The <%= products.name %> is <%= products.price %>
+    <hr class="hr">
     <!-- Yup, I realize this isn't DRY whatsoever, but I fucked up in uploading my images to the database so this is what I'm stuck with -->
     <% if (products.name === 'Coupe') { %> 
         <img src="/coupe.jpeg">
@@ -44,6 +42,14 @@
         <img src="/champagne.jpg">
     <% } %>
 
-    <button><a href="/cart">Add to Cart</a></button>
+    <div class="info">
+        <h4><%= products.name %></h4>
+        <h5>$<%= products.price %></h5>
+    </div>
+    <p>"Integer vitae libero ac risus egestas placerat"</p>
+    <button class="btn btn-secondary btn-lg login"><a href="#">Add to Cart</a></button>  
+    <hr class="hr">
+    <!---------- FOOTER ----------->
+    <%- include ('./partials/footer.ejs') %>  
 </body>
 </html>

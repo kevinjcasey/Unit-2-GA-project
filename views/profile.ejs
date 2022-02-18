@@ -11,17 +11,20 @@
         
     <section class="container-fluid profile">
         <h1 class="display-4">Account info</h1>
-        <p class="h5 col">Name: <%= currentUser.firstName %> <%= currentUser.lastName %></p>
-        <p class="h5 col">Username: <%= currentUser.username %></p> 
-        <p class="h5 col">Email: <%= currentUser.email %></p>
-        <p class="h5 col">Favorite Cocktail: <%= currentUser.favoriteCocktail %></p>
-    </section> 
-    <div class="container-fluid">
-        <button><a href="/edit">Edit Profile</a></button>
+        <p class="h5 col"><span class="text-uppercase">Name:</span> <%= currentUser.firstName %> <%= currentUser.lastName %></p>
+        <p class="h5 col"><span class="text-uppercase">Username:</span> <%= currentUser.username %></p> 
+        <p class="h5 col"><span class="text-uppercase">Email:</span> <%= currentUser.email %></p>
+        <p class="h5 col"><span class="text-uppercase">Favorite Cocktail:</span> <%= currentUser.favoriteCocktail %></p>
+    
+    <div class="container-fluid edit-delete">
+        <button class="btn btn-outline-secondary"><a href="/edit">Edit Account</a></button>
         <form action="/users/<%= currentUser._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Account" />
+            <input class="btn btn-outline-danger" type="submit" value="Delete Account" />
         </form>  
-    </div>   
+    </div> 
+    </section> 
+    <!---------- FOOTER ----------->
+    <%- include ('./partials/footer.ejs') %>
 
 </body>
 </html>

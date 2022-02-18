@@ -8,12 +8,39 @@
     <%- include ('./partials/header.ejs') %>
 
     <h1>Accessories</h1>
-    <% for (let i = 0; i < products.length; i++) { %>
-        <% if (products[i].category === 'Accessories') { %>
-            <a href="/<%= products[i].id %>">
-                <%= products[i].name %>
-            </a>
-        <% } %>
-    <% } %> 
+    <div class="container">  
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4 card-box">
+              <div class="card bg-secondary text-white">
+                <img src="/roll-up-kit-2.jpeg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Roll-up Kit</h5>
+                  <p class="card-text">$60</p>
+                </div>
+                <!-- <a href="/<%=products.id%>" class="streched-link"></a> -->
+              </div>
+            </div>
+            <div class="col mb-4 card-box">
+              <div class="card bg-secondary text-white">
+                <img src="/juicer-2.jpeg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Stainless Steel Juicer</h5>
+                  <p class="card-text">$15</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4 card-box">
+              <div class="card bg-secondary text-white">
+                <img src="/citrus-peeler.jpeg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Citrus Peeler</h5>
+                  <p class="card-text">$6</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------- FOOTER ----------->
+    <%- include ('./partials/footer.ejs') %>  
 </body>
 </html>

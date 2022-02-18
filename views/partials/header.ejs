@@ -1,11 +1,11 @@
 <header>
     <nav class="nav justify-content-between">
-        <a class="nav-link h4" href="/">LBB</a>
+        <a class="nav-link display-4" href="/">LBB</a>
         <% if (currentUser) { %>
         <div class="nav-link">
-            <p>Cheers, <a href="/profile"><%= currentUser.firstName %></a></p>
+            <h5>Hello, <a href="/profile"><%= currentUser.firstName %></a></h5>
             <form action="/sessions?_method=DELETE" method="POST">
-                <button>Log Out</button>
+                <button class="btn btn-secondary btn-small">Log Out</button>
             </form>
             <% } else { %>
             <div class="nav-link">

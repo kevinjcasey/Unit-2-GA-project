@@ -4,12 +4,16 @@ body {
     /* background-image: url(https://i.imgur.com/Flleioi.jpg);
     background-size: cover;
     background-repeat: no-repeat; */
+    background-image: linear-gradient(to bottom right, #8AE1FC, #48B8D0);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -27,19 +31,25 @@ a {
 }
 
 .nav {
-    background-color: grey;
+    background-color: #B28B84;
     padding: 2rem;
+}
+
+.nav a:hover {
+    color: white !important;
 }
 
 .title {
     padding: 3rem;
-    color: whitesmoke;
+    color: #F5E5FC;
     text-align: left;
+    font-family: 'Poppins', sans-serif;
 }
 
 .collections {
     padding: 1rem;
     text-align: center;
+    color: #F5E5FC;
 }
 
 /* .essentials {
@@ -55,31 +65,33 @@ a {
     text-align: center;
 }
 
-#card-hover {
-    filter: drop-shadow(8px 8px 10px rgb(41, 41, 41))
+.products {
+    margin: 1rem;
+    /* filter: opacity(70%) contrast(80%) drop-shadow(8px 8px 10px rgb(41, 41, 41)); */
+}
+
+.categories {
+    filter: opacity(80%) contrast(80%) drop-shadow(8px 8px 10px rgb(41, 41, 41));
 }
 
 #card-hover:hover {
-    transform: scale(1.1);
-    transition: all 0.3s ease-out;
+    filter: opacity(60%);
     cursor: pointer;
 }
 
 .sign-up, .profile {
     text-align: center;
-    padding: 2rem;
+    padding: 3rem;
     margin: 0 auto;
 }
 
-.h5, .col {
+.profile > * {
+    padding: 5px;
+}
+
+.label {
     padding: 1rem;
 }
-
-.submit-btn {
-    padding: 5px;
-    margin-top: 10px;
-}
-
 .card-body {
     display: flex;
     justify-content: space-between;
@@ -89,4 +101,77 @@ a {
     width: 100%;
     height: 50vh;
     object-fit: cover;
+}
+
+h1 {
+    text-align: center;
+    padding: 1rem;
+}
+
+hr.hr {
+    border: 1px solid darkgray;
+    border-radius: 5px;
+}
+
+#main-text {
+    margin-top: 100px;
+    color: #F5E5FC;
+    font-size: 2rem !important;
+    font-weight: bold !important;
+}
+
+.card-box {
+    filter: drop-shadow(8px 8px 10px rgb(41, 41, 41));
+    transition: transform .2s
+}
+
+.card-box:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+
+.info > * {
+    padding: 10px;
+}
+
+img {
+    width: 30%;
+    filter: drop-shadow(2px 2px 2px rgb(41, 41, 41));
+}
+
+footer {
+    margin-top: 10px;
+    background-color: #B28B84;
+    padding: 3rem;
+}
+
+.github {
+    color: lightgray;
+}
+
+.github:hover {
+    color: white !important;
+}
+
+.login {
+    margin-top: 1rem;
+}
+
+.text-uppercase {
+    color: #F5E5FC;
+}
+
+.edit-delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5px;
 }

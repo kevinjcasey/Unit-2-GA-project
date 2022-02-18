@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav class="nav justify-content-between">
-            <a class="nav-link h4" href="/">LBB</a>
+            <a class="nav-link display-4" href="/">LBB</a>
             <% if (currentUser) { %>
             <div class="nav-link">
                 <p>Cheers, <%= currentUser.firstName %></p>
@@ -40,8 +40,16 @@
             <input type="password" id="password" name="password" value =""/>
 
             <br/>
-            <input class="submit-btn" type="submit" value="Login" />
+            <input class="btn btn-secondary btn-lg login" type="submit" value="Login" />
         </form>
     </section>
+
+    <footer>   
+        <nav class="footer">
+            <p>
+                Measured, shaken, and stirred by <span class="github"><a href="https://github.com/kevinjcasey" target="_blank">Kevin Casey</a></span>  
+            </p>
+        </nav>
+    </footer>
 </body>
 </html>

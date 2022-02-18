@@ -12,10 +12,10 @@
     
     <% for (let i = 0; i < products.length; i++) { %>
         <div class="container">
-            <div class="row row-cols-1 row-cols-md-2">
+            <div class="row row-cols-1 row-cols-md-3">
                 <% if (products[i].name === 'Pineapple Barspoon') { %>
-                <div class="col mb-4" id="card-hover">
-                    <div class="card">
+                <div class="col mb-4 card-box">
+                    <div class="card bg-secondary text-white">
                         <img src="/pineapple-barspoon-1.jpeg" class="card-img-top">
                         <div class="card-body">
                             <p><%= products[i].name %></p>
@@ -25,8 +25,8 @@
                     </div>
                 </div>
                 <% } else if (products[i].name === 'Koriko Weighted Shaker Tins') { %>
-                <div class="col" id="card-hover">
-                    <div class="card">
+                <div class="col mb-4 card-box">
+                    <div class="card bg-secondary text-white">
                         <img src="/boston-shaker-1.jpeg" class="card-img-top">
                         <div class="card-body">
                             <p><%= products[i].name %></p>
@@ -36,8 +36,8 @@
                     </div>
                 </div>
                 <% } else if (products[i].name === 'Yarai Mixing Glass') { %>
-                <div class="col" id="card-hover">
-                    <div class="card">
+                <div class="col mb-4 card-box">
+                    <div class="card bg-secondary text-white">
                         <img src="/mixing-glass.jpg" class="card-img-top">
                         <div class="card-body">
                             <p><%= products[i].name %></p>
@@ -47,8 +47,8 @@
                     </div>
                 </div>
                 <% } else if (products[i].name === 'Japanese Style Jigger') { %>
-                <div class="col" id="card-hover">
-                    <div class="card">
+                <div class="col mb-4 card-box">
+                    <div class="card bg-secondary text-white">
                         <img src="/Japanese-jigger.jpeg" class="card-img-top">
                         <div class="card-body">
                             <p><%= products[i].name %></p>
@@ -58,8 +58,8 @@
                     </div>
                 </div>
                 <% } else if (products[i].name === 'Bell Jigger') { %>
-                <div class="col" id="card-hover">
-                    <div class="card">
+                <div class="col mb-4 card-box">
+                    <div class="card bg-secondary text-white">
                         <img src="/bell-jigger.jpeg" class="card-img-top">
                         <div class="card-body">
                             <p><%= products[i].name %></p>
@@ -72,6 +72,8 @@
             </div>  
         </div>
     <% } %>
-        
+
+    <!---------- FOOTER ----------->
+    <%- include ('./partials/footer.ejs') %>     
 </body>
 </html>

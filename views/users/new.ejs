@@ -14,7 +14,7 @@
 <body>
     <header>
         <nav class="nav justify-content-between">
-            <a class="nav-link h4" href="/">LBB</a>
+            <a class="nav-link display-4" href="/">LBB</a>
             <% if (currentUser) { %>
             <div class="nav-link">
                 <p>Cheers, <%= currentUser.firstName %></p>
@@ -34,26 +34,34 @@
     <section class="container sign-up">
         <h1 class="display-4">Sign Up</h1>
         <form class="col" action="/users" method="POST">
-            <label class="h5 col" for="first-name">First Name</label>
+            <label class="h5 col label" for="first-name">First Name</label>
                 <input type="text" id="first-name" name="firstName" value =""/>
 
-            <label class="h5 col" for="last-name">Last Name </label>
+            <label class="h5 col label" for="last-name">Last Name </label>
                 <input type="text" id="last-name" name="lastName" value =""/>
 
-            <label class="h5 col" for="email">Email</label>
+            <label class="h5 col label" for="email">Email</label>
                 <input type="text" id="email" name="email" value=""/>
 
-            <label class="h5 col" for="username">Username</label>
+            <label class="h5 col label" for="username">Username</label>
                 <input type="text" id="username" name="username" value=""/>
 
-            <label class="h5 col" for="password">Password</label>
+            <label class="h5 col label" for="password">Password</label>
                 <input type="password" id="password" name="password" value =""/>
             
-            <label class="h5 col" for="favorite-cocktail">Favorite Cocktail</label>
+            <label class="h5 col label" for="favorite-cocktail">Favorite Cocktail</label>
                 <input type="text" id="favorite-cocktail" name="favoriteCocktail" value =""/>
             <br/>
-            <input class="submit-btn" type="submit" value="Submit" />
+            <input class="btn btn-secondary btn-lg login" type="submit" value="Submit" />
         </form>
     </section>
+
+    <footer>   
+        <nav class="footer">
+            <p>
+                Measured, shaken, and stirred by <span class="github"><a href="https://github.com/kevinjcasey" target="_blank">Kevin Casey</a></span>  
+            </p>
+        </nav>
+    </footer>
 </body>
 </html>

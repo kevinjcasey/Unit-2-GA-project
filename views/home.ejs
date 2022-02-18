@@ -4,57 +4,53 @@
     <%- include ('./partials/head.ejs') %>
 
 <body>
-        <!---------- HEADER ----------->
+    <!---------- HEADER ----------->
+    <%- include ('./partials/header.ejs') %>
+    <hr class="hr">
+    <div class="container"></div>        
+        <div class="main-img">
+                <h1 class="display-2 title">Life Behind Bars</h1>
+                <h3 class="display-5 title">Welcome! <br/> Whether you're a professional or a newbie, we have something for everyone.</h3>  
+        </div>
+    </div>
+    <hr class="hr">
+    <h2 class="display-4 collections">Browse Our Collection</h2>
 
-        <%- include ('./partials/header.ejs') %>
-            <div class="container"></div>        
-                <div class="main-img">
-                        <h1 class="display-2 title">Life Behind Bars</h1>
-                        <h3 class="display-5 title">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</h3>  
-                </div>
+    <div class="card-deck">
+        <div class="card bg-dark text-white w-50 products" id="card-hover">
+            <img src="/Japanese-jigger.jpeg" class="card-img-top categories">
+            <div class="card-img-overlay">
+                <p class="card-title display-4 text-center" id="main-text">Bar Essentials</p>
             </div>
+            <a href="/essentials" class="stretched-link"></a>
+        </div> 
 
-            <h2 class="display-4 collections">Browse Our Collection</h2>
-            <!-- <div class="essentials">
-               <button class="btn btn-outline-secondary"><a href="/essentials">Bar Essentials</a></button> 
-            </div> -->
-
-            <div class="container">
-                <div class="card bg-dark text-white w-50" id="card-hover">
-                    <a href="/essentials">
-                        <img src="/Japanese-jigger.jpeg" class="card-img">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title display-4 text-center">Bar Essentials</h5>
-                        </div>
-                    </a>
-                </div> 
-
-                <div class="card bg-dark text-white w-50" id="card-hover">
-                    <a href="/glassware">
-                        <img src="/highball.jpeg" class="card-img">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title display-4 text-center">Glassware</h5>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="card bg-dark text-white w-50" id="card-hover">
-                    <a href="/accessories">
-                        <img src="/roll-up-kit-2.jpeg" class="card-img">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title display-4 text-center">Accessories</h5>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="card bg-dark text-white w-50" id="card-hover" >
-                    <a href="/ice">
-                        <img src="/ice-stamp-glass.jpg" class="card-img">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title display-4 text-center">Ice Tools</h5>
-                        </div>
-                    </a>
-                </div>
+        <div class="card bg-dark text-white w-50 products" id="card-hover">
+            <img src="/highball.jpeg" class="card-img-top categories">
+            <div class="card-img-overlay">
+                <h5 class="card-title display-4 text-center" id="main-text">Glassware</h5>
             </div>
+            <a href="/glassware" class="stretched-link"></a>
+        </div>
+        
+        <div class="card bg-dark text-white w-50 products" id="card-hover">
+            <img src="/roll-up-kit-2.jpeg" class="card-img-top categories">
+            <div class="card-img-overlay">
+                <h5 class="card-title display-4 text-center" id="main-text">Accessories</h5>
+            </div>
+            <a href="/accessories" class="stretched-link"></a>
+        </div>
+        
+        <div class="card bg-dark text-white w-50 products" id="card-hover" >
+            <img src="/ice-stamp-glass.jpg" class="card-img-top categories">
+            <div class="card-img-overlay">
+                <h5 class="card-title display-4 text-center" id="main-text">Ice Tools</h5>
+            </div>
+            <a href="/ice" class="stretched-link"></a>
+        </div>
+    </div>
+    <hr class="hr">
+    <!---------- FOOTER ----------->
+    <%- include ('./partials/footer.ejs') %>
 </body>
 </html>
